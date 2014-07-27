@@ -303,3 +303,15 @@ public class BitmapUtility
     }
 }
 ```
+
+# Finally
+
+Congrats - that's all you need to do when processing images in a reusable and non-script-kiddy-pixel way. Have fun using the results, contribute to this project if you have any remarks, enjoy Android,
+
+cheers Florian!
+
+P.S.: **...DO NOT COMMIT IN ORDER TO FIX MY NEXT LINE BRACKET STYLE - HAIL TO NEXT-LINE-BRACKET-CODING-STYLE THE ONLY READABLE SYMMETRICAL CODE STYLE!
+
+Have Fun!
+
+[![Image](images/twitter.png "Image title") ](https://twitter.com/_flomueller "Twitter")
