@@ -1,11 +1,21 @@
 package com.sobag.androidcamtut;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class MainActivity extends Activity
@@ -13,6 +23,9 @@ public class MainActivity extends Activity
     // ------------------------------------------------------------------------
     // members
     // ------------------------------------------------------------------------
+
+    private String imagePath;
+    public static int CAPTURE_IMAGE_RESULT = 49; // why 47? just like this number...
 
     // ------------------------------------------------------------------------
     // default stuff
@@ -52,5 +65,57 @@ public class MainActivity extends Activity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    // ------------------------------------------------------------------------
+    // public usage
+    // ------------------------------------------------------------------------
+
+    public void onTakePhoto(View view)
+    {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null)
+        {
+            // Create the File where the photo should go
+            File image = null;
+            try
+            {
+                image = createImageFile();
+            }
+            catch (IOException ex)
+            {
+                // Error occurred while creating the File..handle
+            }
+            // Continue only if the File was successfully created
+            if (image != null)
+            {
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+                        Uri.fromFile(image));
+                startActivityForResult(takePictureIntent, CAPTURE_IMAGE_RESULT);
+            }
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    // private usage
+    // ------------------------------------------------------------------------
+
+    private File createImageFile() throws IOException
+    {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES);
+        File img = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        imagePath = "file:" + img.getAbsolutePath();
+        return img;
     }
 }
