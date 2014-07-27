@@ -1,6 +1,8 @@
 Android camera tutorial
 ==============
 
+![ScreenShot](images/camera-icon_512.png)
+
 "I simply wanna take a picture using camera intent and process the image in my app (display, store, post etc.)" - if that's what you're heading for this tutorial might help you. Why did I create this tutorial as  googling for "android camera intent" produces thousnds of result? Because using 99% of the Google result will make you ending up like this...:
 
 1) Hurra - got a snippet firing up the camera
@@ -26,4 +28,7 @@ Android camera tutorial
 24) it's working!
 
 25) watch the clock - ok this one took me more than 48 hours...
+
+Ok this can be in a much easier way I thought, that's the reason I created this tutorial so simply follow the steps below, use the provided classes and you will end up in a nice intent based camera solution within couple of minutes...
+
 
