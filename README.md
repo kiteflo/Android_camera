@@ -33,6 +33,8 @@ Android camera tutorial (10 minutes)
 
 **Ok this can be in a much easier way I thought, that's the reason I created this tutorial so simply follow the steps below, use the provided classes and you will end up in a nice intent based camera solution within couple of minutes...**
 
+![ScreenShot](images/screenie_composed.png)
+
 # Get started
 
 As I hate tutorials with unstyled results (styled ones somehow result in increased motivation...) I have created a very little bolierplate construct providing a camera button and a HorizontalScrollView which will display the images taken via camera intent. So if you're interested in the camera magic only simply ignore the styling stuff, in case you wanna create a styled camera app the whole bolierplate might be a good starting point. We will not cover the aspects of styling within this tutorial.
@@ -310,7 +312,7 @@ Congrats - that's all you need to do when processing images in a reusable and no
 
 cheers Florian!
 
-P.S.: **...DO NOT COMMIT IN ORDER TO FIX MY NEXT LINE BRACKET STYLE - HAIL TO NEXT-LINE-BRACKET-CODING-STYLE THE ONLY READABLE SYMMETRICAL CODE STYLE!
+P.S.: **...DO NOT COMMIT IN ORDER TO FIX MY NEXT LINE BRACKET STYLE - HAIL TO NEXT-LINE-BRACKET-CODING-STYLE THE ONLY READABLE SYMMETRICAL CODE STYLE!**
 
 Have Fun!
 
