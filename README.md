@@ -1,7 +1,9 @@
 Android camera tutorial
 ==============
 
-<img align="middle" src="images/camera-icon_512.png">
+<p align="center">
+    <img src="images/camera-icon_512.png">
+</p>
 
 "I simply wanna take a picture using camera intent and process the image in my app (display, store, post etc.)" - if that's what you're heading for this tutorial might help you. Why did I create this tutorial as  googling for "android camera intent" produces thousnds of result? Because using 99% of the Google result will make you ending up like this...:
 
